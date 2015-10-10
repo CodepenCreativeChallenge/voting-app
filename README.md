@@ -33,7 +33,7 @@ git bug something-broke
 
 If you don't like git on the command line you can use GUI-tools like [sourcetree](https://www.atlassian.com/software/sourcetree/overview). It's not for me but it's definitely one of the better git GUI-tools.
 
-Always remeber we are here for fun so feel free to kick in some ideas. We obviously don't want a standard material design app but rather something creative and amazing. 
+Always remember we are here for fun so feel free to kick in some ideas. We obviously don't want a standard material design app but rather something creative and amazing. 
 
 ## developing
 
