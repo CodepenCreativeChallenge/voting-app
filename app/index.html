@@ -79,6 +79,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
+          <a data-route="dev-team" href="/dev-team" on-click="onDataRouteClick">
+            <iron-icon icon="build"></iron-icon>
+            <span>Dev Team</span>
+          </a>
+
+
           <a data-route="users" href="/users" on-click="onDataRouteClick">
             <iron-icon icon="face"></iron-icon>
             <span>Users</span>
@@ -129,36 +135,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             </section>
 
+            <section data-route="dev-team">
+              <paper-material elevation="1">
+                <h2 class="page-title">Dev team</h2>
+                <p>These awesome people helped build this app</p>
+                <iron-ajax
+                  auto
+                  url="data/dev-team.json"
+                  handle-as="json"
+                  content-type="application/json"
+                  last-response="{{users}}"></iron-ajax>
+                <user-list users="{{users}}"></user-list>
+              </paper-material>
+            </section>
+
+
             <section data-route="users">
               <paper-material elevation="1">
                 <h2 class="page-title">Users</h2>
-                <p>This is the users section</p>
-                <ul>
-                  <li>
-                    <a href="/users/pixelass">Pixelass</a>
-                  </li>
-                  <li>
-                    <a href="/users/tmrDevelops">tmrDevelops</a>
-                  </li>
-                  <li>
-                    <a href="/users/towc">towc</a>
-                  </li>
-                  <li>
-                    <a href="/users/TimPietrusky">TimPietrusky</a>
-                  </li>
-                  <li>
-                    <a href="/users/Haroenv">Haroenv</a>
-                  </li>
-                  <li>
-                    <a href="/users/BrianDGLS">BrianDGLS</a>
-                  </li>
-                  <li>
-                    <a href="/users/egrucza">egrucza</a>
-                  </li>
-                  <li>
-                    <a href="/users/jackrugile">jackrugile</a>
-                  </li>
-                </ul>
+                <p>These users have contributed to the challenges</p>
+                <iron-ajax
+                  auto
+                  url="data/dev-team.json"
+                  handle-as="json"
+                  content-type="application/json"
+                  last-response="{{users}}"></iron-ajax>
+                <user-list users="{{users}}"></user-list>
               </paper-material>
             </section>
 
@@ -169,7 +171,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <span>{{params.name}}</span>
                 </h2>
                 <user-info name="{{params.name}}"></user-info>
-                </paper-material>
+              </paper-material>
             </section>
 
             <section data-route="about">
