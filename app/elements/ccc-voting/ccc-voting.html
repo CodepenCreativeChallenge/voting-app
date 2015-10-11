@@ -1,0 +1,56 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+
+<dom-module id="ccc-voting" attributes="users">
+  <template>
+    <style>
+    :host {
+      display: block;
+    }
+    .options-wrapper {
+      width: 100%;
+    }
+    </style>
+    <div class="options-wrapper layout horizontal">
+      <paper-menu class="flex">
+        <template is="dom-repeat" items="{{palettes}}" as="palette">
+          <paper-item>{{palette}}</paper-item>
+        </template>
+      </paper-menu>
+      <paper-menu class="flex">
+        <template is="dom-repeat" items="{{shapes}}" as="shape">
+          <paper-item>{{shape}}</paper-item>
+        </template>
+      </paper-menu>
+      <paper-menu class="flex">
+        <template is="dom-repeat" items="{{periods}}" as="period">
+          <paper-item>{{period}}</paper-item>
+        </template>
+      </paper-menu>
+    </div>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+      Polymer({
+        is: 'ccc-voting',
+        properties: {
+          palettes: {
+            type: Object,
+            value: ['rainbow', 'pastell', 'grayscale', 'neon']
+          },
+          shapes: {
+            type: Object,
+            value: ['pyramids', 'lines', 'stripes', 'dots']
+          },
+          periods: {
+            type: Object,
+            value: ['weekend', 'week', 'month']
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>

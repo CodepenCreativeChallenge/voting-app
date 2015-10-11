@@ -114,10 +114,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <span class="flex"></span>
 
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
             <div class="app-name">Codepen Creative Challenge</div>
@@ -158,12 +154,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h2 class="page-title">Users</h2>
                 <p>These users have contributed to the challenges</p>
                 <firebase-collection
-                  order-by-child="name"
-                  limit-to-first="3"
+                  limit-to-first="10"
                   location="https://brilliant-inferno-5434.firebaseio.com/users"
-                  data="{{users}}">
-                </firebase-collection><user-list users="[[users]]"></user-list>
-               </paper-material>
+                  data="{{users}}"></firebase-collection>
+                <user-list users="[[users]]"></user-list>
+              </paper-material>
             </section>
 
             <section data-route="user-info">
@@ -191,8 +186,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-material elevation="1">
                 <h2 class="page-title">Vote</h2>
                 <p>
-                  This section houses the voting functionality and will display potential palettes. 
+                  This section houses the voting functionality and will display potential palettes.
                 </p>
+                <ccc-voting></ccc-voting>
               </paper-material>
             </section>
 

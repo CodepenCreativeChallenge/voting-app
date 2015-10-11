@@ -3,16 +3,14 @@
 
 <dom-module id="user-list" attributes="users">
   <template>
-    <ul>
+    <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
       <template is="dom-repeat" items="{{users}}" as="user">
-        <li>
-          <user-list-item
-            username={{user.username}}
-            realname={{user.realName}}>
-          </user-list-item>
-        </li>
+        <user-list-item
+          username={{user.username}}
+          realname={{user.realName}}>
+        </user-list-item>
       </template>
-    </ul>
+    </paper-menu>
   </template>
   <script>
     (function() {

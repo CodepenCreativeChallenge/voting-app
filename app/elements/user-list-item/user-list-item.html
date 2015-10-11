@@ -2,7 +2,20 @@
 
 <dom-module id="user-list-item" attributes="username realname">
   <template>
-    <a href="{{url}}">{{realname}}</a>
+      <style>
+      :host {
+        display: block;
+      }
+      a {
+        display: block;
+      }
+    </style>
+    <paper-item class="relative">
+      <a data-route="user-info"
+         href="{{url}}"
+         on-click="onDataRouteClick"
+         class="fit">{{realname}}</a>
+    </paper-item>
   </template>
   <script>
     (function() {
