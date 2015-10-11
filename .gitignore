@@ -1,5 +1,8 @@
 node_modules
-app
 dist
 bower_components
 .tmp
+
+## generated files and folders
+app/elements/
+app/index.html
