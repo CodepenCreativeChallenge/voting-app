@@ -1,0 +1,15 @@
+- var bower = '../../bower_components'
+
+link(rel='import', href='#{bower}/polymer/polymer.html')
+dom-module#user-info(attributes='name')
+  template
+    style
+      include user-info.css
+    div {{name}}
+      p
+        a(href='{{profile}}'
+          target='_blank') Codepen profile
+    img.avatar(src='{{avatar}}'
+               alt='{{name}}')
+  script
+    include user-info.js

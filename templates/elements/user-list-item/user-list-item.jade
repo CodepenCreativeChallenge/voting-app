@@ -1,0 +1,13 @@
+- var bower = '../../bower_components'
+
+link(rel='import', href='#{bower}/polymer/polymer.html')
+dom-module#user-list-item(attributes='username realname')
+  template
+    style
+      include user-list-item.css
+
+    paper-item.relative
+      a.fit(data-route='user-info'
+            href='{{url}}') {{realname}}
+  script
+    include user-list-item.js

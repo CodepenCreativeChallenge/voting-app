@@ -20,6 +20,7 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var glob = require('glob');
+var jade = require('gulp-jade');
 var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
@@ -67,6 +68,22 @@ gulp.task('js', function () {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/'))
     .pipe(gulp.dest('dist/'));
+});
+
+// compile jade to HTML
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+
+  gulp.src([
+    'templates/**/*.jade',
+    '!templates/views/**/*.jade',
+    '!templates/partials/**/*.jade'
+    ])
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
+    .pipe(gulp.dest('app'))
 });
 
 // Lint JavaScript
@@ -241,7 +258,13 @@ gulp.task('serve', ['styles', 'elements', 'images'], function () {
     }
   });
 
+  gulp.watch([
+    'templates/**/*.jade',
+    '!templates/views/**/*.jade',
+    '!templates/partials/**/*.jade'
+  ], ['templates'])
   gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/elements/**/*.css'], ['elements', reload]);
   gulp.watch(['app/{scripts,elements}/**/{*.js,*.html}'], ['jshint','js']);
@@ -275,10 +298,11 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   // Uncomment 'cache-config' after 'rename-index' if you are going to use service workers.
   runSequence(
+    ['templates'],
     ['copy', 'styles'],
     ['elements', 'js'],
     ['jshint', 'images', 'fonts', 'html'],
-    'vulcanize','rename-index', // 'cache-config',
+    'vulcanize','rename-index', //'cache-config',
     cb);
 });
 

@@ -1,0 +1,27 @@
+- var bower = '../../bower_components'
+link(rel='import', href='#{bower}/polymer/polymer.html')
+link(rel='import', href='#{bower}/paper-input/paper-input.html')
+link(rel='import', href='#{bower}/paper-item/paper-item.html')
+link(rel='import', href='#{bower}/paper-menu/paper-menu.html')
+dom-module#ccc-voting(attributes='users')
+  template
+    style
+      include ccc-voting.css
+    .options-wrapper.layout.horizontal
+      paper-menu.flex
+        template(is='dom-repeat'
+                 items='{{palettes}}'
+                 as='palette')
+          paper-item {{palette}}
+      paper-menu.flex
+        template(is='dom-repeat'
+                 items='{{shapes}}'
+                 as='shape')
+          paper-item {{shape}}
+      paper-menu.flex
+        template(is='dom-repeat'
+                 items='{{periods}}'
+                 as='period')
+          paper-item {{period}}
+  script
+    include ccc-voting.js

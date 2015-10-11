@@ -1,0 +1,10 @@
+section(data-route='dev-team')
+  paper-material(elevation='1')
+    h2.page-title Dev team
+    p These awesome people helped build this app
+    iron-ajax(auto
+              url='data/dev-team.json'
+              handle-as='json'
+              content-type='application/json'
+              last-response='{{devs}}')
+    user-list(users='{{devs}}')

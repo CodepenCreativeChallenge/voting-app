@@ -1,0 +1,6 @@
+:host {
+  display: block;
+}
+.avatar {
+  outline: 10px solid pink;
+}

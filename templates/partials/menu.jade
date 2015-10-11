@@ -1,0 +1,40 @@
+-
+  var pages = {
+    home: {
+      href: '/',
+      route: 'home',
+      icon: 'home',
+      label: 'Home',
+    },
+    devTeam: {
+      href: '/dev-team',
+      route: 'dev-team',
+      icon: 'build',
+      label: 'Dev team',
+    },
+    users: {
+      href: '/users',
+      route: 'users',
+      icon: 'face',
+      label: 'Users',
+    },
+    vote: {
+      href: '/vote',
+      route: 'vote',
+      icon: 'star',
+      label: 'Vote',
+    },
+    contact: {
+      href: '/contact',
+      route: 'contact',
+      icon: 'mail',
+      label: 'Contact',
+    }
+  }
+
+paper-menu.list(attr-for-selected='data-route'
+                selected='[[route]]')
+  each page in pages
+    a(data-route=page.route, href=page.href, on-click='onDataRouteClick')
+      iron-icon(icon=page.icon)
+      span= page.label

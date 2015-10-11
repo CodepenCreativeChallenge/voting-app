@@ -1,0 +1,52 @@
+
+doctype html
+html(lang='')
+  head
+    include partials/head.jade
+  body.fullbleed.layout.vertical(unresolved)
+    span#browser-sync-binding
+    template#app(is='dom-bind')
+      paper-drawer-panel#paperDrawerPanel
+        //- Drawer Scroll Header Panel
+        paper-scroll-header-panel(drawer fixed)
+          //- Drawer Toolbar
+          paper-toolbar#drawerToolbar
+            span.paper-font-title Menu
+          //- Drawer Content
+          include partials/menu.jade
+
+        //- Main Area
+        paper-scroll-header-panel(main condenses keep-condensed-header)
+          //- Main Toolbar
+          paper-toolbar#mainToolbar.tall
+            paper-icon-button#paperToggle(icon='menu' paper-drawer-toggle)
+            span.flex
+            //- Application name
+            .middle.middle-container.center.horizontal.layout
+              .app-name Codepen Creative Challenge
+            //- Application sub title
+            .bottom.bottom-container.center.horizontal.layout
+              .bottom-title.paper-font-subhead bringing new challenges to codepen on a regular basis
+          //- Main Content
+          .content
+            iron-pages(attr-for-selected='data-route'
+                       selected='{{route}}')
+
+              //- include views
+              include views/home.jade
+              include views/dev-team.jade
+              include views/users.jade
+              include views/user-info.jade
+              include views/about.jade
+              include views/vote.jade
+              include views/contact.jade
+      //- Uncomment next block to enable Service Worker support (1/2)
+      //- paper-toast#caching-complete(duration='6000'
+      //-                             text='Caching complete! This app will work offline.')
+      //- platinum-sw-register(auto-register clients-claim skip-waiting
+      //-                     on-service-worker-installed='displayInstalledToast')
+      //-  platinum-sw-cache(default-cache-strategy='fastest'
+      //-                    cache-config-file='cache-config.json')
+    //- build:js scripts/app.js
+    script(src='scripts/app.js')
+    //- endbuild

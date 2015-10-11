@@ -1,0 +1,17 @@
+- var bower = '../../bower_components'
+link(rel="import"
+     href="#{bower}/polymer/polymer.html")
+link(rel="import"
+     href="../user-list-item/user-list-item.html")
+
+dom-module(id="user-list"
+           attributes="users")
+  template
+    paper-menu(class="list"
+               attr-for-selected="data-route"
+               selected="[[route]]")
+      template(is="dom-repeat" items="{{users}}" as="user")
+        user-list-item(username="{{user.username}}"
+                       realname="{{user.realName}}")
+  script
+    include user-list.js

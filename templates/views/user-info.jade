@@ -1,0 +1,6 @@
+section(data-route='user-info')
+  paper-material(elevation='1')
+    h2.page-title
+      | User:
+      span {{params.name}}
+    user-info(name='{{params.name}}')

@@ -1,0 +1,9 @@
+- var firebase = 'https://brilliant-inferno-5434.firebaseio.com/users';
+section(data-route='users')
+  paper-material(elevation='1')
+    h2.page-title Users
+    p These users have contributed to the challenges
+    firebase-collection(limit-to-first='10'
+                        location='#{firebase}'
+                        data='{{users}}')
+    user-list(users='[[users]]')
