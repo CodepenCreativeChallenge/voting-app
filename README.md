@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/CodepenCreativeChallenge/voting-app](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CodepenCreativeChallenge/voting-app?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-
+Waffle/Kanban Board: https://waffle.io/CodepenCreativeChallenge/voting-app
 
 ## Git
 
@@ -34,7 +34,7 @@ git bug something-broke
 
 If you don't like git on the command line you can use GUI-tools like [sourcetree](https://www.atlassian.com/software/sourcetree/overview). It's not for me but it's definitely one of the better git GUI-tools.
 
-Always remember we are here for fun so feel free to kick in some ideas. We obviously don't want a standard material design app but rather something creative and amazing. 
+Always remember we are here for fun so feel free to kick in some ideas. We obviously don't want a standard material design app but rather something creative and amazing.
 
 ## developing
 
@@ -68,4 +68,3 @@ Polymer has a really nice firebase integration. I set up a dummy firebase at
 * https://brilliant-inferno-5434.firebaseio.com/
 * ccc-devs@pixelass.com
 * to get the password send me a private message in gitter
-
