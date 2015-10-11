@@ -94,6 +94,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>About</span>
           </a>
 
+          <a data-route="vote" href="/vote" on-click="onDataRouteClick">
+            <iron-icon icon="star"></iron-icon>
+            <span>Vote</span>
+          </a>
+
           <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
@@ -178,6 +183,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   I stumbled on this page. How do I vote?
                   <br>
                   First of all go to the voting page. Look at the list of palettes, shapes and periods. If you like something you see there already, click on it and it will appear in the hashtag. Otherwise, if you have an idea not similar to what's already displayed, type it in the hashtag, and it will also appear for others to vote on.
+                </p>
+              </paper-material>
+            </section>
+
+            <section data-route="vote">
+              <paper-material elevation="1">
+                <h2 class="page-title">Vote</h2>
+                <p>
+                  This section houses the voting functionality and will display potential palettes. 
                 </p>
               </paper-material>
             </section>
