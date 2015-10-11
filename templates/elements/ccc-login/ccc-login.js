@@ -188,7 +188,7 @@
       }
     },
     getUserDataUrl: function(uid) {
-      return 'https://hi9site.firebaseio.com/users/' + uid;
+      return 'https://brilliant-inferno-5434.firebaseio.com/users/' + uid;
     },
     isAdmin: function(role) {
       return role === 'admin';
