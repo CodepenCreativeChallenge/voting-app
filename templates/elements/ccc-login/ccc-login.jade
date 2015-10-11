@@ -1,0 +1,34 @@
+- var bower = '../../bower_components'
+link(rel='import'
+     href='#{bower}/polymer/polymer.html')
+link(rel='import' 
+     href='#{bower}/firebase-element/firebase-auth.html')
+link(rel='import' 
+     href='#{bower}/firebase-element/firebase-document.html')
+link(rel='import' 
+     href='#{bower}/paper-button/paper-button.html')
+
+dom-module(id='ccc-login')
+  template
+    firebase-auth(
+       id='firebaseLogin'
+       user='{{user}}' 
+       status-known='{{statusKnown}}' 
+       location='https://brilliant-inferno-5434.firebaseio.com' 
+       provider='twitter' 
+       on-error='errorHandler'
+       on-user-created='userSuccessHandler' 
+       on-password-changed='userSuccessHandler' 
+       on-password-reset='userSuccessHandler' 
+       params='{{params}}' 
+       on-user-removed='userSuccessHandler')
+     firebase-document(location='https://brilliant-inferno-5434.firebaseio.com/data' id='firebaseDocument')
+     
+     p(hidden$='{{computeLoginHidden(statusKnown, user)}}') Please Login to vote 
+     p(hidden$='{{computeLogoutHidden(statusKnown, user)}}') Welcome back 
+       span {{user.twitter.username}}
+     
+     paper-button(on-tap='logout' hidden$='{{computeLogoutHidden(statusKnown, user)}}') Logout 
+     paper-button(on-tap='login' hidden$='{{computeLoginHidden(statusKnown, user)}}') Login 
+  script
+    include ccc-login.js
