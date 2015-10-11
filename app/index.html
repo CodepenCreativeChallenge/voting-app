@@ -84,7 +84,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Dev Team</span>
           </a>
 
-
           <a data-route="users" href="/users" on-click="onDataRouteClick">
             <iron-icon icon="face"></iron-icon>
             <span>Users</span>
@@ -144,24 +143,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   url="data/dev-team.json"
                   handle-as="json"
                   content-type="application/json"
-                  last-response="{{users}}"></iron-ajax>
-                <user-list users="{{users}}"></user-list>
+                  last-response="{{devs}}"></iron-ajax>
+                <user-list users="{{devs}}"></user-list>
               </paper-material>
             </section>
-
 
             <section data-route="users">
               <paper-material elevation="1">
                 <h2 class="page-title">Users</h2>
                 <p>These users have contributed to the challenges</p>
-                <iron-ajax
-                  auto
-                  url="data/dev-team.json"
-                  handle-as="json"
-                  content-type="application/json"
-                  last-response="{{users}}"></iron-ajax>
-                <user-list users="{{users}}"></user-list>
-              </paper-material>
+                <firebase-collection
+                  order-by-child="name"
+                  limit-to-first="3"
+                  location="https://brilliant-inferno-5434.firebaseio.com/users"
+                  data="{{users}}">
+                </firebase-collection><user-list users="[[users]]"></user-list>
+               </paper-material>
             </section>
 
             <section data-route="user-info">
@@ -200,24 +197,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </paper-drawer-panel>
 
     <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
     <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline."></paper-toast>
 
-  <platinum-sw-register auto-register
+    <platinum-sw-register auto-register
                           clients-claim
                           skip-waiting
                           on-service-worker-installed="displayInstalledToast">
-    <platinum-sw-cache default-cache-strategy="fastest"
+      <platinum-sw-cache default-cache-strategy="fastest"
                          cache-config-file="cache-config.json"></platinum-sw-cache>
-  </platinum-sw-register>
-  -->
-</template>
+    </platinum-sw-register>
+  </template>
 
-<!-- build:js scripts/app.js -->
-<script src="scripts/app.js"></script>
-<!-- endbuild-->
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
 </body>
 
 </html>
