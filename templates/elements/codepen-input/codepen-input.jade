@@ -1,0 +1,12 @@
+- var bower = '../../bower_components'
+
+link(rel='import', href='#{bower}/polymer/polymer.html')
+
+dom-module#codepen-input
+  template
+    style
+      include codepen-input.css
+    span codepen.io/pen/
+    autosize-input(placeholder='pen id')
+  script
+    include codepen-input.js

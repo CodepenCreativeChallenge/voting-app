@@ -7,22 +7,25 @@ dom-module#ccc-voting(attributes='users')
   template
     style
       include ccc-voting.css
-    hashtag-input
-    .options-wrapper.layout.horizontal
-      paper-menu.flex
-        template(is='dom-repeat'
-                 items='{{palettes}}'
-                 as='palette')
-          paper-item {{palette}}
-      paper-menu.flex
-        template(is='dom-repeat'
-                 items='{{shapes}}'
-                 as='shape')
-          paper-item {{shape}}
-      paper-menu.flex
-        template(is='dom-repeat'
-                 items='{{periods}}'
-                 as='period')
-          paper-item {{period}}
+    form
+      hashtag-input
+      .options-wrapper.layout.horizontal
+        paper-menu.flex
+          template(is='dom-repeat'
+                   items='{{palettes}}'
+                   as='palette')
+            paper-item {{palette}}
+        paper-menu.flex
+          template(is='dom-repeat'
+                   items='{{shapes}}'
+                   as='shape')
+            paper-item {{shape}}
+        paper-menu.flex
+          template(is='dom-repeat'
+                   items='{{periods}}'
+                   as='period')
+            paper-item {{period}}
+      codepen-input
+      button(type='submit') Submit
   script
     include ccc-voting.js

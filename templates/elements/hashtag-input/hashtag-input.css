@@ -1,3 +1,6 @@
 :host {
   display: flex;
 }
+input {
+  text-transform: capitalize;
+}

@@ -15,6 +15,9 @@
         type: Object,
         value: ['weekend', 'week', 'month']
       }
+    },
+    attached: function() {
+      console.log(this.palettes,this.shapes,this.periods);
     }
   });
 })();
