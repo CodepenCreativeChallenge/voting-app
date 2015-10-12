@@ -2,16 +2,16 @@
   display: block;
 }
 input {
-	float: left;
-	margin: 0;
-	border: none;
-	font-size: 1em;
-	border-bottom: 2px solid lightgray;
+  float: left;
+  margin: 0;
+  border: none;
+  font-size: 1em;
+  border-bottom: 2px solid lightgray;
 }
 input {
-	text-transform: capitalize;
+  text-transform: capitalize;
 }
 input:focus {
-	outline: none;
-	border-bottom: 2px solid darkgrey;
+  outline: none;
+  border-bottom: 2px solid darkgrey;
 }
