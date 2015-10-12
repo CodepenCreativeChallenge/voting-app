@@ -2,7 +2,7 @@
   'use strict';
   Polymer({
     is: 'autosize-input',
-    ready: function() {
+    attached: function() {
       var input = this.querySelector('input');
       input.style.width = '10px';
       var dummy = document.createElement('span');
@@ -25,15 +25,15 @@
       });
 
       dummy.innerText = input.placeholder;
-      input.style.width = dummy.offsetWidth + 2 + 'px';
+      input.style.width = dummy.offsetWidth + 'px';
 
       input.addEventListener('input', (e) => {
         dummy.innerText = e.target.value;
-        input.style.width = dummy.offsetWidth + 2 + 'px';
+        input.style.width = dummy.offsetWidth + 'px';
 
         if (e.target.value.length < 1) {
           dummy.innerText = input.placeholder;
-          input.style.width = dummy.offsetWidth + 2 + 'px';
+          input.style.width = dummy.offsetWidth + 'px';
         }
       });
     }
