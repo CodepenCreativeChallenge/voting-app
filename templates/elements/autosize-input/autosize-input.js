@@ -31,13 +31,11 @@
 
       input.addEventListener('input', (e) => {
         dummy.innerText = e.target.value;
-        let dummyWitdth = window.getComputedStyle(dummy).width;
-        input.style.width = dummyWitdth;
+        input.style.width = window.getComputedStyle(dummy).width;
 
         if (e.target.value.length < 1) {
           dummy.innerText = input.placeholder;
-          let dummyWitdth = window.getComputedStyle(dummy).width;
-          input.style.width = dummy.offsetWidth + 'px';
+          input.style.width = window.getComputedStyle(dummy).width;
         }
       });
     }
