@@ -1,0 +1,11 @@
+- var bower = '../../bower_components'
+
+link(rel='import', href='#{bower}/polymer/polymer.html')
+
+dom-module#autosize-input(attributes='placeholder')
+  template
+    style
+      include autosize-input.css
+    input(type="text" placeholder="{{placeholder}}")
+  script
+    include autosize-input.js
