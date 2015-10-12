@@ -1,6 +1,3 @@
 :host {
-  display: block;
-}
-span {
-  float: left;
+  display: flex;
 }

@@ -1,8 +1,7 @@
 :host {
-  display: block;
+  display: inline-block;
 }
 input {
-  float: left;
   margin: 0;
   border: none;
   font-size: 1em;
